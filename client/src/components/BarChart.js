@@ -25,8 +25,8 @@ function BarChart (props) {
     return a.x - b.x;
   });
   
-  const chartWidth = 1800;
-  const chartHeight = 500;
+  const chartWidth = 1500;
+  const chartHeight = 400;
   const chartDomain = [0, Math.max(...prices) * 1.25];
 
   return (

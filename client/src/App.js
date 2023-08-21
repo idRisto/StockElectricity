@@ -69,8 +69,7 @@ export default function App() {
   return (
     <div className="App">
       <div className='currentDate'>
-        Today is:
-        <div>{reformatDate()}</div>
+        Hourly prices for: {reformatDate()}
       </div>
       <header className="App-header">
         <BarChart prices={ data } date={getDate()}/>
