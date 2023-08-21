@@ -85,9 +85,9 @@ body {
 
 .currentDate {
   font-size: 40px;
-  margin-bottom: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-bottom: grey solid 1px;
   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.5);
 }

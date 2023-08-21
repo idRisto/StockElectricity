@@ -6,14 +6,16 @@ import {XYPlot, VerticalGridLines, HorizontalGridLines, XAxis, YAxis, VerticalBa
 function BarChart (props) {
 
   function roundToTwo(num) {
-    return +(Math.round(num + "e+2")  + "e-2");
+    return +(Math.round((num * 1.24) + "e+2")  + "e-2");
   }
 
   const newData = [];
+  const prices = [];
   props.prices.forEach(element => {
     let trimmedDate = element.aikaleima_suomi.substr(11,2);
     trimmedDate = parseInt(trimmedDate) + 1;
-    const roundedPrice = roundToTwo(element.hinta)
+    const roundedPrice = roundToTwo(element.hinta);
+    prices.push(roundedPrice);
     const newObject = {};
     newObject["x"] = trimmedDate.toString();
     newObject["y"] = roundedPrice;
@@ -24,8 +26,8 @@ function BarChart (props) {
   });
   
   const chartWidth = 1800;
-  const chartHeight = 400;
-  const chartDomain = [0, 20];
+  const chartHeight = 500;
+  const chartDomain = [0, Math.max(...prices) * 1.25];
 
   return (
     <div className="App">
@@ -47,4 +49,4 @@ function BarChart (props) {
   );
 };
 
-export default BarChart;                              
+export default BarChart;   

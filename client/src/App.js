@@ -3,10 +3,6 @@ import BarChart from "./components/BarChart";
 import './App.css';
 import HighLowPrice from './components/HighLowPrice';
 
-
-///TODO: ADD BUTTON TO CHANGE DAY
-
-
 export default function App() {
 
   const [date, setDate] = useState(getDate());
@@ -49,7 +45,6 @@ export default function App() {
   }
 
   function oneDayForward () {
-    //TODO: Month limitation still bugged
     const current = new Date(date);
     if(isDateBeforeToday(current)) {
       let next = new Date(current.getTime() + 86400000);

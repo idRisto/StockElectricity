@@ -5,7 +5,7 @@ function HighLowPrice (props)
 {
 
   function roundToTwo(num) {
-    return +(Math.round(num + "e+2")  + "e-2");
+    return +(Math.round((num * 1.24) + "e+2")  + "e-2");
   }
 
   const newData = [];
@@ -25,7 +25,7 @@ function HighLowPrice (props)
         <div className="Price">{lowPrice} snt/kWh</div>
       </div>
       <div>
-        <p>This is daily highest and lowest price</p>
+        <p>This is daily highest and lowest price (alv 24%)</p>
       </div>
     </div>
   );
